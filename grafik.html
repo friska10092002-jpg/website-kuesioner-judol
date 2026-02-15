@@ -1,0 +1,277 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Grafik Hasil - UIN PONOROGO Research</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-logo">
+                <i class="fas fa-university"></i>
+                <span>UIN PONOROGO Research</span>
+            </div>
+            <ul class="nav-menu">
+                <li><a href="index.html" class="nav-link">Home</a></li>
+                <li><a href="kuesioner.html" class="nav-link">Kuesioner</a></li>
+                <li><a href="grafik.html" class="nav-link active">Grafik</a></li>
+            </ul>
+            <div class="hamburger">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Charts Section -->
+    <section class="charts-section">
+        <div class="container">
+            <div class="charts-header">
+                <div class="header-icon">
+                    <i class="fas fa-chart-pie"></i>
+                </div>
+                <h1>Grafik Hasil Penelitian</h1>
+                <p>Visualisasi data responden berdasarkan skema AGIL Talcott Parsons</p>
+            </div>
+
+            <!-- Stats Cards -->
+            <div class="stats-grid">
+                <div class="stat-card total-respondents">
+                    <div class="stat-icon">
+                        <i class="fas fa-users"></i>
+                    </div>
+                    <div class="stat-info">
+                        <h3>Total Responden</h3>
+                        <p class="stat-number" id="totalResponden">-</p>
+                        <span class="stat-label">Orang</span>
+                    </div>
+                </div>
+
+                <div class="stat-card adaptation-stat">
+                    <div class="stat-icon">
+                        <i class="fas fa-sync-alt"></i>
+                    </div>
+                    <div class="stat-info">
+                        <h3>Adaptation</h3>
+                        <p class="stat-number" id="adaptationStat">-</p>
+                        <span class="stat-label">% Ya</span>
+                    </div>
+                </div>
+
+                <div class="stat-card goal-stat">
+                    <div class="stat-icon">
+                        <i class="fas fa-bullseye"></i>
+                    </div>
+                    <div class="stat-info">
+                        <h3>Goal Attainment</h3>
+                        <p class="stat-number" id="goalStat">-</p>
+                        <span class="stat-label">% Ya</span>
+                    </div>
+                </div>
+
+                <div class="stat-card integration-stat">
+                    <div class="stat-icon">
+                        <i class="fas fa-link"></i>
+                    </div>
+                    <div class="stat-info">
+                        <h3>Integration</h3>
+                        <p class="stat-number" id="integrationStat">-</p>
+                        <span class="stat-label">% Ya</span>
+                    </div>
+                </div>
+
+                <div class="stat-card latency-stat">
+                    <div class="stat-icon">
+                        <i class="fas fa-balance-scale"></i>
+                    </div>
+                    <div class="stat-info">
+                        <h3>Latency</h3>
+                        <p class="stat-number" id="latencyStat">-</p>
+                        <span class="stat-label">% Ya</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Charts Container -->
+            <div class="charts-container">
+                <!-- Main Chart -->
+                <div class="chart-card main-chart">
+                    <div class="chart-header">
+                        <h3><i class="fas fa-chart-bar"></i> Perbandingan Ya vs Tidak per Dimensi AGIL</h3>
+                        <p>Grafik batang menunjukkan persentase jawaban Ya dan Tidak untuk setiap dimensi</p>
+                    </div>
+                    <div class="chart-wrapper">
+                        <canvas id="mainChart"></canvas>
+                    </div>
+                </div>
+
+                <!-- Detail Charts Grid -->
+                <div class="detail-charts-grid">
+                    <div class="chart-card">
+                        <div class="chart-header adaptation">
+                            <h3><i class="fas fa-sync-alt"></i> Adaptation</h3>
+                            <p>5 Pertanyaan</p>
+                        </div>
+                        <div class="chart-wrapper small">
+                            <canvas id="adaptationChart"></canvas>
+                        </div>
+                    </div>
+
+                    <div class="chart-card">
+                        <div class="chart-header goal">
+                            <h3><i class="fas fa-bullseye"></i> Goal Attainment</h3>
+                            <p>5 Pertanyaan</p>
+                        </div>
+                        <div class="chart-wrapper small">
+                            <canvas id="goalChart"></canvas>
+                        </div>
+                    </div>
+
+                    <div class="chart-card">
+                        <div class="chart-header integration">
+                            <h3><i class="fas fa-link"></i> Integration</h3>
+                            <p>5 Pertanyaan</p>
+                        </div>
+                        <div class="chart-wrapper small">
+                            <canvas id="integrationChart"></canvas>
+                        </div>
+                    </div>
+
+                    <div class="chart-card">
+                        <div class="chart-header latency">
+                            <h3><i class="fas fa-balance-scale"></i> Latency</h3>
+                            <p>5 Pertanyaan</p>
+                        </div>
+                        <div class="chart-wrapper small">
+                            <canvas id="latencyChart"></canvas>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Summary Chart -->
+                <div class="chart-card">
+                    <div class="chart-header">
+                        <h3><i class="fas fa-chart-pie"></i> Ringkasan Keseluruhan</h3>
+                        <p>Distribusi total jawaban Ya vs Tidak dari seluruh dimensi AGIL</p>
+                    </div>
+                    <div class="chart-wrapper medium">
+                        <canvas id="summaryChart"></canvas>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Data Table -->
+            <div class="data-table-card">
+                <div class="table-header">
+                    <h3><i class="fas fa-table"></i> Detail Data per Dimensi</h3>
+                    <button class="btn-refresh" id="btnRefresh">
+                        <i class="fas fa-sync-alt"></i>
+                        Refresh Data
+                    </button>
+                </div>
+                <div class="table-wrapper">
+                    <table class="data-table">
+                        <thead>
+                            <tr>
+                                <th>Dimensi AGIL</th>
+                                <th>Total Pertanyaan</th>
+                                <th>Jawaban Ya</th>
+                                <th>Jawaban Tidak</th>
+                                <th>Persentase Ya</th>
+                            </tr>
+                        </thead>
+                        <tbody id="dataTableBody">
+                            <tr>
+                                <td><i class="fas fa-sync-alt"></i> Adaptation</td>
+                                <td>5</td>
+                                <td id="adaptationYa">-</td>
+                                <td id="adaptationTidak">-</td>
+                                <td id="adaptationPercent">-</td>
+                            </tr>
+                            <tr>
+                                <td><i class="fas fa-bullseye"></i> Goal Attainment</td>
+                                <td>5</td>
+                                <td id="goalYa">-</td>
+                                <td id="goalTidak">-</td>
+                                <td id="goalPercent">-</td>
+                            </tr>
+                            <tr>
+                                <td><i class="fas fa-link"></i> Integration</td>
+                                <td>5</td>
+                                <td id="integrationYa">-</td>
+                                <td id="integrationTidak">-</td>
+                                <td id="integrationPercent">-</td>
+                            </tr>
+                            <tr>
+                                <td><i class="fas fa-balance-scale"></i> Latency</td>
+                                <td>5</td>
+                                <td id="latencyYa">-</td>
+                                <td id="latencyTidak">-</td>
+                                <td id="latencyPercent">-</td>
+                            </tr>
+                        </tbody>
+                        <tfoot>
+                            <tr>
+                                <th>Total Keseluruhan</th>
+                                <th>20</th>
+                                <th id="totalYa">-</th>
+                                <th id="totalTidak">-</th>
+                                <th id="totalPercent">-</th>
+                            </tr>
+                        </tfoot>
+                    </table>
+                </div>
+            </div>
+
+            <!-- Info Card -->
+            <div class="info-card">
+                <div class="info-icon">
+                    <i class="fas fa-info-circle"></i>
+                </div>
+                <div class="info-content">
+                    <h3>Tentang Skema AGIL</h3>
+                    <p>Skema AGIL adalah kerangka teori dari Talcott Parsons yang menganalisis fungsi-fungsi sistem sosial. Dalam konteks penelitian ini:</p>
+                    <ul>
+                        <li><strong>Adaptation:</strong> Kemampuan keluarga beradaptasi dengan perubahan ekonomi</li>
+                        <li><strong>Goal Attainment:</strong> Kemampuan mencapai tujuan bersama</li>
+                        <li><strong>Integration:</strong> Kohesi dan harmoni antar anggota keluarga</li>
+                        <li><strong>Latency:</strong> Pola perilaku dan nilai-nilai keluarga</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Loading Overlay -->
+    <div class="loading-overlay" id="loadingOverlay">
+        <div class="loading-spinner">
+            <div class="spinner"></div>
+            <p>Memuat data...</p>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-logo">
+                    <i class="fas fa-university"></i>
+                    <span>UIN PONOROGO Research</span>
+                </div>
+                <p class="footer-text">© 2025 Penelitian Akademik - Friska Saputra Redoansah</p>
+                <p class="footer-subtext">Universitas Negeri Kiai Ageng Muhammad Besari</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/script.js"></script>
+    <script src="js/charts.js"></script>
+</body>
+</html>

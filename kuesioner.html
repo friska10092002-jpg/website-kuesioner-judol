@@ -1,0 +1,716 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kuesioner - UIN PONOROGO Research</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-logo">
+                <i class="fas fa-university"></i>
+                <span>UIN PONOROGO Research</span>
+            </div>
+            <ul class="nav-menu">
+                <li><a href="index.html" class="nav-link">Home</a></li>
+                <li><a href="kuesioner.html" class="nav-link active">Kuesioner</a></li>
+                <li><a href="grafik.html" class="nav-link">Grafik</a></li>
+            </ul>
+            <div class="hamburger">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Questionnaire Section -->
+    <section class="questionnaire-section">
+        <div class="container">
+            <div class="questionnaire-header">
+                <div class="header-icon">
+                    <i class="fas fa-clipboard-check"></i>
+                </div>
+                <h1>Kuesioner Penelitian</h1>
+                <p>Skema AGIL Talcott Parsons - Dampak Judi Online terhadap Ketidakseimbangan Keluarga</p>
+            </div>
+
+            <form id="kuesionerForm" class="questionnaire-form">
+                <!-- Bagian A: Identitas Responden -->
+                <div class="form-section" id="section-identitas">
+                    <div class="section-header">
+                        <div class="section-number">A</div>
+                        <h2>Identitas Responden</h2>
+                    </div>
+                    
+                    <div class="form-grid">
+                        <div class="form-group">
+                            <label for="inisial">
+                                <i class="fas fa-user"></i>
+                                Inisial Nama <span class="required">*</span>
+                            </label>
+                            <input type="text" id="inisial" name="inisial" placeholder="Contoh: FSR" required>
+                            <span class="error-message">Inisial nama wajib diisi</span>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="usia">
+                                <i class="fas fa-birthday-cake"></i>
+                                Usia <span class="required">*</span>
+                            </label>
+                            <input type="number" id="usia" name="usia" min="18" max="80" placeholder="Contoh: 35" required>
+                            <span class="error-message">Usia wajib diisi (18-80 tahun)</span>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="jenisKelamin">
+                                <i class="fas fa-venus-mars"></i>
+                                Jenis Kelamin <span class="required">*</span>
+                            </label>
+                            <select id="jenisKelamin" name="jenisKelamin" required>
+                                <option value="">Pilih Jenis Kelamin</option>
+                                <option value="Laki-laki">Laki-laki</option>
+                                <option value="Perempuan">Perempuan</option>
+                            </select>
+                            <span class="error-message">Jenis kelamin wajib dipilih</span>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="lamaPernikahan">
+                                <i class="fas fa-ring"></i>
+                                Lama Pernikahan <span class="required">*</span>
+                            </label>
+                            <select id="lamaPernikahan" name="lamaPernikahan" required>
+                                <option value="">Pilih Lama Pernikahan</option>
+                                <option value="< 1 tahun">< 1 tahun</option>
+                                <option value="1-5 tahun">1-5 tahun</option>
+                                <option value="6-10 tahun">6-10 tahun</option>
+                                <option value="11-15 tahun">11-15 tahun</option>
+                                <option value="> 15 tahun">> 15 tahun</option>
+                            </select>
+                            <span class="error-message">Lama pernikahan wajib dipilih</span>
+                        </div>
+
+                        <div class="form-group full-width">
+                            <label for="statusPekerjaan">
+                                <i class="fas fa-briefcase"></i>
+                                Status Pekerjaan <span class="required">*</span>
+                            </label>
+                            <select id="statusPekerjaan" name="statusPekerjaan" required>
+                                <option value="">Pilih Status Pekerjaan</option>
+                                <option value="PNS/TNI/Polri">PNS/TNI/Polri</option>
+                                <option value="Swasta">Swasta</option>
+                                <option value="Wiraswasta">Wiraswasta</option>
+                                <option value="Petani/Buruh">Petani/Buruh</option>
+                                <option value="Ibu Rumah Tangga">Ibu Rumah Tangga</option>
+                                <option value="Tidak Bekerja">Tidak Bekerja</option>
+                                <option value="Lainnya">Lainnya</option>
+                            </select>
+                            <span class="error-message">Status pekerjaan wajib dipilih</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Bagian B: Pertanyaan AGIL -->
+                <div class="form-section" id="section-agil">
+                    <div class="section-header">
+                        <div class="section-number">B</div>
+                        <h2>Pertanyaan Skema AGIL</h2>
+                        <p class="section-desc">Jawablah pertanyaan berikut dengan memilih <strong>Ya</strong> atau <strong>Tidak</strong>. Semua pertanyaan wajib dijawab.</p>
+                    </div>
+
+                    <!-- ADAPTATION -->
+                    <div class="agil-category">
+                        <div class="category-header adaptation">
+                            <div class="category-icon">
+                                <i class="fas fa-sync-alt"></i>
+                            </div>
+                            <div class="category-info">
+                                <h3>ADAPTATION (Adaptasi)</h3>
+                                <p>Kemampuan keluarga beradaptasi dengan perubahan ekonomi akibat judi online</p>
+                            </div>
+                        </div>
+
+                        <div class="questions-list">
+                            <div class="question-item" data-question="A1">
+                                <div class="question-number">1</div>
+                                <div class="question-content">
+                                    <p class="question-text">Apakah pendapatan keluarga berkurang signifikan akibat judi online?</p>
+                                    <div class="radio-group">
+                                        <label class="radio-label">
+                                            <input type="radio" name="A1" value="Ya" required>
+                                            <span class="radio-custom"></span>
+                                            <span class="radio-text">Ya</span>
+                                        </label>
+                                        <label class="radio-label">
+                                            <input type="radio" name="A1" value="Tidak" required>
+                                            <span class="radio-custom"></span>
+                                            <span class="radio-text">Tidak</span>
+                                        </label>
+                                    </div>
+                                    <div class="keterangan-group">
+                                        <label>Keterangan (opsional):</label>
+                                        <textarea name="A1_keterangan" rows="2" placeholder="Tambahkan keterangan jika diperlukan..."></textarea>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="question-item" data-question="A2">
+                                <div class="question-number">2</div>
+                                <div class="question-content">
+                                    <p class="question-text">Apakah keluarga mengalami kesulitan memenuhi kebutuhan dasar (makan, pakaian, pendidikan)?</p>
+                                    <div class="radio-group">
+                                        <label class="radio-label">
+                                            <input type="radio" name="A2" value="Ya" required>
+                                            <span class="radio-custom"></span>
+                                            <span class="radio-text">Ya</span>
+                                        </label>
+                                        <label class="radio-label">
+                                            <input type="radio" name="A2" value="Tidak" required>
+                                            <span class="radio-custom"></span>
+                                            <span class="radio-text">Tidak</span>
+                                        </label>
+                                    </div>
+                                    <div class="keterangan-group">
+                                        <label>Keterangan (opsional):</label>
+                                        <textarea name="A2_keterangan" rows="2" placeholder="Tambahkan keterangan jika diperlukan..."></textarea>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="question-item" data-question="A3">
+                                <div class="question-number">3</div>
+                                <div class="question-content">
+                                    <p class="question-text">Apakah terjadi penjualan aset keluarga untuk menutupi hutang judi?</p>
+                                    <div class="radio-group">
+                                        <label class="radio-label">
+                                            <input type="radio" name="A3" value="Ya" required>
+                                            <span class="radio-custom"></span>
+                                            <span class="radio-text">Ya</span>
+                                        </label>
+                                        <label class="radio-label">
+                                            <input type="radio" name="A3" value="Tidak" required>
+                                            <span class="radio-custom"></span>
+                                            <span class="radio-text">Tidak</span>
+                                        </label>
+                                    </div>
+                                    <div class="keterangan-group">
+                                        <label>Keterangan (opsional):</label>
+                                        <textarea name="A3_keterangan" rows="2" placeholder="Tambahkan keterangan jika diperlukan..."></textarea>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="question-item" data-question="A4">
+                                <div class="question-number">4</div>
+                                <div class="question-content">
+                                    <p class="question-text">Apakah pasangan mencari pekerjaan tambahan untuk menutupi kerugian finansial?</p>
+                                    <div class="radio-group">
+                                        <label class="radio-label">
+                                            <input type="radio" name="A4" value="Ya" required>
+                                            <span class="radio-custom"></span>
+                                            <span class="radio-text">Ya</span>
+                                        </label>
+                                        <label class="radio-label">
+                                            <input type="radio" name="A4" value="Tidak" required>
+                                            <span class="radio-custom"></span>
+                                            <span class="radio-text">Tidak</span>
+                                        </label>
+                                    </div>
+                                    <div class="keterangan-group">
+                                        <label>Keterangan (opsional):</label>
+                                        <textarea name="A4_keterangan" rows="2" placeholder="Tambahkan keterangan jika diperlukan..."></textarea>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="question-item" data-question="A5">
+                                <div class="question-number">5</div>
+                                <div class="question-content">
+                                    <p class="question-text">Apakah keluarga meminjam uang ke pihak lain untuk judi online?</p>
+                                    <div class="radio-group">
+                                        <label class="radio-label">
+                                            <input type="radio" name="A5" value="Ya" required>
+                                            <span class="radio-custom"></span>
+                                            <span class="radio-text">Ya</span>
+                                        </label>
+                                        <label class="radio-label">
+                                            <input type="radio" name="A5" value="Tidak" required>
+                                            <span class="radio-custom"></span>
+                                            <span class="radio-text">Tidak</span>
+                                        </label>
+                                    </div>
+                                    <div class="keterangan-group">
+                                        <label>Keterangan (opsional):</label>
+                                        <textarea name="A5_keterangan" rows="2" placeholder="Tambahkan keterangan jika diperlukan..."></textarea>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- GOAL ATTAINMENT -->
+                    <div class="agil-category">
+                        <div class="category-header goal">
+                            <div class="category-icon">
+                                <i class="fas fa-bullseye"></i>
+                            </div>
+                            <div class="category-info">
+                                <h3>GOAL ATTAINMENT (Pencapaian Tujuan)</h3>
+                                <p>Kemampuan keluarga mencapai tujuan bersama akibat terganggunya fokus oleh judi online</p>
+                            </div>
+                        </div>
+
+                        <div class="questions-list">
+                            <div class="question-item" data-question="G1">
+                                <div class="question-number">6</div>
+                                <div class="question-content">
+                                    <p class="question-text">Apakah rencana keuangan keluarga (tabungan, investasi) terganggu?</p>
+                                    <div class="radio-group">
+                                        <label class="radio-label">
+                                            <input type="radio" name="G1" value="Ya" required>
+                                            <span class="radio-custom"></span>
+                                            <span class="radio-text">Ya</span>
+                                        </label>
+                                        <label class="radio-label">
+                                            <input type="radio" name="G1" value="Tidak" required>
+                                            <span class="radio-custom"></span>
+                                            <span class="radio-text">Tidak</span>
+                                        </label>
+                                    </div>
+                                    <div class="keterangan-group">
+                                        <label>Keterangan (opsional):</label>
+                                        <textarea name="G1_keterangan" rows="2" placeholder="Tambahkan keterangan jika diperlukan..."></textarea>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="question-item" data-question="G2">
+                                <div class="question-number">7</div>
+                                <div class="question-content">
+                                    <p class="question-text">Apakah tujuan pendidikan anak terhambat akibat masalah finansial?</p>
+                                    <div class="radio-group">
+                                        <label class="radio-label">
+                                            <input type="radio" name="G2" value="Ya" required>
+                                            <span class="radio-custom"></span>
+                                            <span class="radio-text">Ya</span>
+                                        </label>
+                                        <label class="radio-label">
+                                            <input type="radio" name="G2" value="Tidak" required>
+                                            <span class="radio-custom"></span>
+                                            <span class="radio-text">Tidak</span>
+                                        </label>
+                                    </div>
+                                    <div class="keterangan-group">
+                                        <label>Keterangan (opsional):</label>
+                                        <textarea name="G2_keterangan" rows="2" placeholder="Tambahkan keterangan jika diperlukan..."></textarea>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="question-item" data-question="G3">
+                                <div class="question-number">8</div>
+                                <div class="question-content">
+                                    <p class="question-text">Apakah pasangan sering absen dari pekerjaan karena judi online?</p>
+                                    <div class="radio-group">
+                                        <label class="radio-label">
+                                            <input type="radio" name="G3" value="Ya" required>
+                                            <span class="radio-custom"></span>
+                                            <span class="radio-text">Ya</span>
+                                        </label>
+                                        <label class="radio-label">
+                                            <input type="radio" name="G3" value="Tidak" required>
+                                            <span class="radio-custom"></span>
+                                            <span class="radio-text">Tidak</span>
+                                        </label>
+                                    </div>
+                                    <div class="keterangan-group">
+                                        <label>Keterangan (opsional):</label>
+                                        <textarea name="G3_keterangan" rows="2" placeholder="Tambahkan keterangan jika diperlukan..."></textarea>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="question-item" data-question="G4">
+                                <div class="question-number">9</div>
+                                <div class="question-content">
+                                    <p class="question-text">Apakah keluarga gagal mencapai target keuangan tahunan?</p>
+                                    <div class="radio-group">
+                                        <label class="radio-label">
+                                            <input type="radio" name="G4" value="Ya" required>
+                                            <span class="radio-custom"></span>
+                                            <span class="radio-text">Ya</span>
+                                        </label>
+                                        <label class="radio-label">
+                                            <input type="radio" name="G4" value="Tidak" required>
+                                            <span class="radio-custom"></span>
+                                            <span class="radio-text">Tidak</span>
+                                        </label>
+                                    </div>
+                                    <div class="keterangan-group">
+                                        <label>Keterangan (opsional):</label>
+                                        <textarea name="G4_keterangan" rows="2" placeholder="Tambahkan keterangan jika diperlukan..."></textarea>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="question-item" data-question="G5">
+                                <div class="question-number">10</div>
+                                <div class="question-content">
+                                    <p class="question-text">Apakah pasangan mengabaikan tanggung jawab finansial keluarga?</p>
+                                    <div class="radio-group">
+                                        <label class="radio-label">
+                                            <input type="radio" name="G5" value="Ya" required>
+                                            <span class="radio-custom"></span>
+                                            <span class="radio-text">Ya</span>
+                                        </label>
+                                        <label class="radio-label">
+                                            <input type="radio" name="G5" value="Tidak" required>
+                                            <span class="radio-custom"></span>
+                                            <span class="radio-text">Tidak</span>
+                                        </label>
+                                    </div>
+                                    <div class="keterangan-group">
+                                        <label>Keterangan (opsional):</label>
+                                        <textarea name="G5_keterangan" rows="2" placeholder="Tambahkan keterangan jika diperlukan..."></textarea>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- INTEGRATION -->
+                    <div class="agil-category">
+                        <div class="category-header integration">
+                            <div class="category-icon">
+                                <i class="fas fa-link"></i>
+                            </div>
+                            <div class="category-info">
+                                <h3>INTEGRATION (Integrasi)</h3>
+                                <p>Kohesi dan harmoni antar anggota keluarga yang terganggu</p>
+                            </div>
+                        </div>
+
+                        <div class="questions-list">
+                            <div class="question-item" data-question="I1">
+                                <div class="question-number">11</div>
+                                <div class="question-content">
+                                    <p class="question-text">Apakah sering terjadi pertengkaran antara pasangan akibat judi online?</p>
+                                    <div class="radio-group">
+                                        <label class="radio-label">
+                                            <input type="radio" name="I1" value="Ya" required>
+                                            <span class="radio-custom"></span>
+                                            <span class="radio-text">Ya</span>
+                                        </label>
+                                        <label class="radio-label">
+                                            <input type="radio" name="I1" value="Tidak" required>
+                                            <span class="radio-custom"></span>
+                                            <span class="radio-text">Tidak</span>
+                                        </label>
+                                    </div>
+                                    <div class="keterangan-group">
+                                        <label>Keterangan (opsional):</label>
+                                        <textarea name="I1_keterangan" rows="2" placeholder="Tambahkan keterangan jika diperlukan..."></textarea>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="question-item" data-question="I2">
+                                <div class="question-number">12</div>
+                                <div class="question-content">
+                                    <p class="question-text">Apakah komunikasi dalam keluarga menjadi tidak harmonis?</p>
+                                    <div class="radio-group">
+                                        <label class="radio-label">
+                                            <input type="radio" name="I2" value="Ya" required>
+                                            <span class="radio-custom"></span>
+                                            <span class="radio-text">Ya</span>
+                                        </label>
+                                        <label class="radio-label">
+                                            <input type="radio" name="I2" value="Tidak" required>
+                                            <span class="radio-custom"></span>
+                                            <span class="radio-text">Tidak</span>
+                                        </label>
+                                    </div>
+                                    <div class="keterangan-group">
+                                        <label>Keterangan (opsional):</label>
+                                        <textarea name="I2_keterangan" rows="2" placeholder="Tambahkan keterangan jika diperlukan..."></textarea>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="question-item" data-question="I3">
+                                <div class="question-number">13</div>
+                                <div class="question-content">
+                                    <p class="question-text">Apakah pasangan mengabaikan waktu bersama keluarga?</p>
+                                    <div class="radio-group">
+                                        <label class="radio-label">
+                                            <input type="radio" name="I3" value="Ya" required>
+                                            <span class="radio-custom"></span>
+                                            <span class="radio-text">Ya</span>
+                                        </label>
+                                        <label class="radio-label">
+                                            <input type="radio" name="I3" value="Tidak" required>
+                                            <span class="radio-custom"></span>
+                                            <span class="radio-text">Tidak</span>
+                                        </label>
+                                    </div>
+                                    <div class="keterangan-group">
+                                        <label>Keterangan (opsional):</label>
+                                        <textarea name="I3_keterangan" rows="2" placeholder="Tambahkan keterangan jika diperlukan..."></textarea>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="question-item" data-question="I4">
+                                <div class="question-number">14</div>
+                                <div class="question-content">
+                                    <p class="question-text">Apakah anggota keluarga lain ikut terpengaruh emosional?</p>
+                                    <div class="radio-group">
+                                        <label class="radio-label">
+                                            <input type="radio" name="I4" value="Ya" required>
+                                            <span class="radio-custom"></span>
+                                            <span class="radio-text">Ya</span>
+                                        </label>
+                                        <label class="radio-label">
+                                            <input type="radio" name="I4" value="Tidak" required>
+                                            <span class="radio-custom"></span>
+                                            <span class="radio-text">Tidak</span>
+                                        </label>
+                                    </div>
+                                    <div class="keterangan-group">
+                                        <label>Keterangan (opsional):</label>
+                                        <textarea name="I4_keterangan" rows="2" placeholder="Tambahkan keterangan jika diperlukan..."></textarea>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="question-item" data-question="I5">
+                                <div class="question-number">15</div>
+                                <div class="question-content">
+                                    <p class="question-text">Apakah kepercayaan antar pasangan menurun?</p>
+                                    <div class="radio-group">
+                                        <label class="radio-label">
+                                            <input type="radio" name="I5" value="Ya" required>
+                                            <span class="radio-custom"></span>
+                                            <span class="radio-text">Ya</span>
+                                        </label>
+                                        <label class="radio-label">
+                                            <input type="radio" name="I5" value="Tidak" required>
+                                            <span class="radio-custom"></span>
+                                            <span class="radio-text">Tidak</span>
+                                        </label>
+                                    </div>
+                                    <div class="keterangan-group">
+                                        <label>Keterangan (opsional):</label>
+                                        <textarea name="I5_keterangan" rows="2" placeholder="Tambahkan keterangan jika diperlukan..."></textarea>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- LATENCY -->
+                    <div class="agil-category">
+                        <div class="category-header latency">
+                            <div class="category-icon">
+                                <i class="fas fa-balance-scale"></i>
+                            </div>
+                            <div class="category-info">
+                                <h3>LATENCY (Latency/Pola)</h3>
+                                <p>Pola perilaku dan nilai-nilai keluarga yang terganggu</p>
+                            </div>
+                        </div>
+
+                        <div class="questions-list">
+                            <div class="question-item" data-question="L1">
+                                <div class="question-number">16</div>
+                                <div class="question-content">
+                                    <p class="question-text">Apakah pasangan sering berbohong tentang aktivitas judi online?</p>
+                                    <div class="radio-group">
+                                        <label class="radio-label">
+                                            <input type="radio" name="L1" value="Ya" required>
+                                            <span class="radio-custom"></span>
+                                            <span class="radio-text">Ya</span>
+                                        </label>
+                                        <label class="radio-label">
+                                            <input type="radio" name="L1" value="Tidak" required>
+                                            <span class="radio-custom"></span>
+                                            <span class="radio-text">Tidak</span>
+                                        </label>
+                                    </div>
+                                    <div class="keterangan-group">
+                                        <label>Keterangan (opsional):</label>
+                                        <textarea name="L1_keterangan" rows="2" placeholder="Tambahkan keterangan jika diperlukan..."></textarea>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="question-item" data-question="L2">
+                                <div class="question-number">17</div>
+                                <div class="question-content">
+                                    <p class="question-text">Apakah pola tidur pasangan berubah (begadang main judi online)?</p>
+                                    <div class="radio-group">
+                                        <label class="radio-label">
+                                            <input type="radio" name="L2" value="Ya" required>
+                                            <span class="radio-custom"></span>
+                                            <span class="radio-text">Ya</span>
+                                        </label>
+                                        <label class="radio-label">
+                                            <input type="radio" name="L2" value="Tidak" required>
+                                            <span class="radio-custom"></span>
+                                            <span class="radio-text">Tidak</span>
+                                        </label>
+                                    </div>
+                                    <div class="keterangan-group">
+                                        <label>Keterangan (opsional):</label>
+                                        <textarea name="L2_keterangan" rows="2" placeholder="Tambahkan keterangan jika diperlukan..."></textarea>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="question-item" data-question="L3">
+                                <div class="question-number">18</div>
+                                <div class="question-content">
+                                    <p class="question-text">Apakah nilai-nilai keagamaan/ketakwaan keluarga menurun?</p>
+                                    <div class="radio-group">
+                                        <label class="radio-label">
+                                            <input type="radio" name="L3" value="Ya" required>
+                                            <span class="radio-custom"></span>
+                                            <span class="radio-text">Ya</span>
+                                        </label>
+                                        <label class="radio-label">
+                                            <input type="radio" name="L3" value="Tidak" required>
+                                            <span class="radio-custom"></span>
+                                            <span class="radio-text">Tidak</span>
+                                        </label>
+                                    </div>
+                                    <div class="keterangan-group">
+                                        <label>Keterangan (opsional):</label>
+                                        <textarea name="L3_keterangan" rows="2" placeholder="Tambahkan keterangan jika diperlukan..."></textarea>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="question-item" data-question="L4">
+                                <div class="question-number">19</div>
+                                <div class="question-content">
+                                    <p class="question-text">Apakah pasangan menunjukkan perubahan perilaku (mudah marah, tertekan)?</p>
+                                    <div class="radio-group">
+                                        <label class="radio-label">
+                                            <input type="radio" name="L4" value="Ya" required>
+                                            <span class="radio-custom"></span>
+                                            <span class="radio-text">Ya</span>
+                                        </label>
+                                        <label class="radio-label">
+                                            <input type="radio" name="L4" value="Tidak" required>
+                                            <span class="radio-custom"></span>
+                                            <span class="radio-text">Tidak</span>
+                                        </label>
+                                    </div>
+                                    <div class="keterangan-group">
+                                        <label>Keterangan (opsional):</label>
+                                        <textarea name="L4_keterangan" rows="2" placeholder="Tambahkan keterangan jika diperlukan..."></textarea>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="question-item" data-question="L5">
+                                <div class="question-number">20</div>
+                                <div class="question-content">
+                                    <p class="question-text">Apakah pasangan sulit mengontrol keinginan untuk berjudi online?</p>
+                                    <div class="radio-group">
+                                        <label class="radio-label">
+                                            <input type="radio" name="L5" value="Ya" required>
+                                            <span class="radio-custom"></span>
+                                            <span class="radio-text">Ya</span>
+                                        </label>
+                                        <label class="radio-label">
+                                            <input type="radio" name="L5" value="Tidak" required>
+                                            <span class="radio-custom"></span>
+                                            <span class="radio-text">Tidak</span>
+                                        </label>
+                                    </div>
+                                    <div class="keterangan-group">
+                                        <label>Keterangan (opsional):</label>
+                                        <textarea name="L5_keterangan" rows="2" placeholder="Tambahkan keterangan jika diperlukan..."></textarea>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Submit Section -->
+                <div class="submit-section">
+                    <div class="progress-indicator">
+                        <div class="progress-bar">
+                            <div class="progress-fill" id="progressFill"></div>
+                        </div>
+                        <p class="progress-text"><span id="progressPercent">0</span>% selesai</p>
+                    </div>
+                    
+                    <button type="submit" class="btn-submit" id="btnSubmit">
+                        <i class="fas fa-paper-plane"></i>
+                        Kirim Jawaban
+                    </button>
+                    
+                    <p class="submit-note">
+                        <i class="fas fa-shield-alt"></i>
+                        Data Anda akan disimpan secara aman dan rahasia
+                    </p>
+                </div>
+            </form>
+        </div>
+    </section>
+
+    <!-- Success Modal -->
+    <div class="modal" id="successModal">
+        <div class="modal-content">
+            <div class="modal-icon">
+                <i class="fas fa-check-circle"></i>
+            </div>
+            <h2>Terima Kasih!</h2>
+            <p>Terima kasih telah berpartisipasi dalam penelitian ini. Jawaban Anda telah berhasil disimpan.</p>
+            <div class="modal-actions">
+                <a href="grafik.html" class="btn-primary">
+                    <i class="fas fa-chart-bar"></i>
+                    Lihat Grafik Hasil
+                </a>
+                <a href="index.html" class="btn-secondary">
+                    <i class="fas fa-home"></i>
+                    Kembali ke Home
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Loading Overlay -->
+    <div class="loading-overlay" id="loadingOverlay">
+        <div class="loading-spinner">
+            <div class="spinner"></div>
+            <p>Mengirim data...</p>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-logo">
+                    <i class="fas fa-university"></i>
+                    <span>UIN PONOROGO Research</span>
+                </div>
+                <p class="footer-text">© 2025 Penelitian Akademik - Friska Saputra Redoansah</p>
+                <p class="footer-subtext">Universitas Negeri Kiai Ageng Muhammad Besari</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/script.js"></script>
+</body>
+</html>
